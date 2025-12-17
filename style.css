@@ -286,17 +286,16 @@ body {
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    background: var(--gradient);
-    padding: 5px;
+    background: transparent;
+    padding: 0;
     animation: float 6s ease-in-out infinite;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+    box-shadow: none;
     transition: all 0.5s ease;
 }
 
 .image-wrapper:hover {
-    box-shadow: 0 0 50px rgba(99, 102, 241, 0.6);
     transform: scale(1.05);
 }
 
