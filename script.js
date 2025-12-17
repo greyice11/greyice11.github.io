@@ -193,3 +193,136 @@ if (canvas) {
     }
     animate();
 }
+
+// --- 4. Lightbox Gallery ---
+const modal = document.getElementById('image-modal');
+const modalImg = document.getElementById('modal-img');
+const closeBtn = document.querySelector('.modal-close');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const dotsContainer = document.querySelector('.modal-dots');
+let currentImages = [];
+let currentImageIndex = 0;
+
+function openModal(images, index = 0) {
+    if (!images || images.length === 0) return;
+
+    currentImages = images;
+    currentImageIndex = index;
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    updateModalImage();
+    updateDots();
+}
+
+function updateModalImage() {
+    modalImg.src = `assets/publications/${currentImages[currentImageIndex]}`;
+    // Show/Hide buttons based on index
+    prevBtn.style.display = currentImages.length > 1 ? 'flex' : 'none';
+    nextBtn.style.display = currentImages.length > 1 ? 'flex' : 'none';
+}
+
+function updateDots() {
+    dotsContainer.innerHTML = '';
+    if (currentImages.length <= 1) return;
+
+    currentImages.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === currentImageIndex) dot.classList.add('active');
+        dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = index;
+            updateModalImage();
+            updateDots();
+        });
+        dotsContainer.appendChild(dot);
+    });
+}
+
+// Event Listeners for Cards
+document.querySelectorAll('.pub-card').forEach(card => {
+    const imagesAttr = card.getAttribute('data-images');
+    if (imagesAttr) {
+        const images = imagesAttr.split(',');
+
+        // Add click listener to the visual part
+        const visual = card.querySelector('.pub-visual');
+        if (visual) {
+            visual.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent card interactions
+                // Determine which image to show? Default to 0
+                openModal(images, 0);
+            });
+            visual.style.cursor = 'pointer';
+        }
+    }
+});
+
+// Modal Controls
+if (modal) {
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+        updateModalImage();
+        updateDots();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+        updateModalImage();
+        updateDots();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('show')) return;
+
+        if (e.key === 'Escape') {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        } else if (e.key === 'ArrowLeft') {
+            currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+            updateModalImage();
+            updateDots();
+        } else if (e.key === 'ArrowRight') {
+            currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+            updateModalImage();
+            updateDots();
+        }
+    });
+}
+
+// --- 5. Profile Image Hover Effect ---
+const profileImg = document.querySelector('.profile-img');
+if (profileImg) {
+    profileImg.addEventListener('mouseenter', () => {
+        profileImg.style.opacity = '0';
+        setTimeout(() => {
+            profileImg.src = 'assets/profile/profile_informal.jpg';
+            profileImg.style.opacity = '1';
+        }, 300);
+    });
+
+    profileImg.addEventListener('mouseleave', () => {
+        profileImg.style.opacity = '0';
+        setTimeout(() => {
+            profileImg.src = 'assets/profile/profile_formal.jpg';
+            profileImg.style.opacity = '1';
+        }, 300);
+    });
+}
+
