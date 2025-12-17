@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -30,14 +32,13 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
             <div class="hero-text">
                 <p class="hero-subtitle">Ph.D. Candidate</p>
                 <h1 class="hero-title">Ali Akbar</h1>
                 <p class="hero-description">
-                    Researching the intersection of <span class="highlight">Computer Vision</span>, 
-                    <span class="highlight">Machine Learning</span>, and <span class="highlight">Robotics</span> 
-                    for intelligent construction and structural engineering.
+                    Developing intelligent systems for <span class="typing-text"></span><span class="cursor">|</span>
                 </p>
                 <div class="hero-buttons">
                     <a href="#publications" class="btn btn-primary">View Publications</a>
@@ -45,9 +46,12 @@
                 </div>
                 <div class="hero-social">
                     <a href="mailto:greyice11@g.skku.edu" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://linkedin.com/in/ali-akbar-853a72125" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/greyice11" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://orcid.org/0009-0001-9245-3757" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                    <a href="https://linkedin.com/in/ali-akbar-853a72125" target="_blank" title="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/greyice11" target="_blank" title="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://orcid.org/0009-0001-9245-3757" target="_blank" title="ORCID"><i
+                            class="fab fa-orcid"></i></a>
                 </div>
             </div>
             <div class="hero-image">
@@ -71,13 +75,13 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I am a Ph.D. candidate at <strong>Sungkyunkwan University</strong> (SKKU), South Korea, 
-                        specializing in Construction Engineering and Project Management. My research focuses on 
+                        I am a Ph.D. candidate at <strong>Sungkyunkwan University</strong> (SKKU), South Korea,
+                        specializing in Construction Engineering and Project Management. My research focuses on
                         developing AI-powered systems for construction automation and safety.
                     </p>
                     <p>
-                        My work spans deep learning for defect detection, vision-language models for safety guidance, 
-                        and autonomous robotic inspection systems. I integrate Digital Twin technologies with 
+                        My work spans deep learning for defect detection, vision-language models for safety guidance,
+                        and autonomous robotic inspection systems. I integrate Digital Twin technologies with
                         real-time sensing for predictive maintenance and quality management.
                     </p>
                 </div>
@@ -115,12 +119,14 @@
                 <div class="research-card" data-aos="fade-up">
                     <div class="research-icon"><i class="fas fa-hard-hat"></i></div>
                     <h3>Construction AI</h3>
-                    <p>Developing deep learning frameworks for automated defect detection and quantification in construction materials.</p>
+                    <p>Developing deep learning frameworks for automated defect detection and quantification in
+                        construction materials.</p>
                 </div>
                 <div class="research-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="research-icon"><i class="fas fa-comments"></i></div>
                     <h3>Vision-Language Models</h3>
-                    <p>Creating VLM-based systems for semantic safety guidance in autonomous construction site inspection.</p>
+                    <p>Creating VLM-based systems for semantic safety guidance in autonomous construction site
+                        inspection.</p>
                 </div>
                 <div class="research-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="research-icon"><i class="fas fa-car"></i></div>
@@ -140,22 +146,25 @@
     <section id="publications" class="section">
         <div class="container">
             <h2 class="section-title">Publications</h2>
-            
+
             <div class="pub-category">
                 <h3 class="pub-category-title">Journal Articles</h3>
                 <div class="publications-list">
                     <div class="pub-item">
                         <span class="pub-year">2025</span>
                         <div class="pub-content">
-                            <h4>BIM log mining framework using deep learning for productivity assessment in construction facilities</h4>
-                            <p class="pub-authors"><strong>A. Akbar</strong>, Y. Chang, J. Song, S. Lee, S. Park, J. Bae, S. Kwon</p>
+                            <h4>BIM log mining framework using deep learning for productivity assessment in construction
+                                facilities</h4>
+                            <p class="pub-authors"><strong>A. Akbar</strong>, Y. Chang, J. Song, S. Lee, S. Park, J.
+                                Bae, S. Kwon</p>
                             <p class="pub-venue">Journal of Asian Architecture and Building Engineering</p>
                         </div>
                     </div>
                     <div class="pub-item">
                         <span class="pub-year">2025</span>
                         <div class="pub-content">
-                            <h4>Cloud-based database framework of corrosion detecting and grading for temporary steel pipe supports</h4>
+                            <h4>Cloud-based database framework of corrosion detecting and grading for temporary steel
+                                pipe supports</h4>
                             <p class="pub-authors"><strong>A. Akbar</strong>, G. Choi, J.M. Njoroge, S. Kwon</p>
                             <p class="pub-venue">Journal of Asian Architecture and Building Engineering</p>
                         </div>
@@ -163,7 +172,8 @@
                     <div class="pub-item">
                         <span class="pub-year">2025</span>
                         <div class="pub-content">
-                            <h4>Edge-guided slicing and inference (EGSI) with feature aggregation network for quantification of large defective temporary construction materials</h4>
+                            <h4>Edge-guided slicing and inference (EGSI) with feature aggregation network for
+                                quantification of large defective temporary construction materials</h4>
                             <p class="pub-authors">N.J. Mugo, <strong>A. Akbar</strong>, J. Song, S. Kwon</p>
                             <p class="pub-venue">Journal of Asian Architecture and Building Engineering</p>
                         </div>
@@ -177,17 +187,21 @@
                     <div class="pub-item">
                         <span class="pub-year">2023</span>
                         <div class="pub-content">
-                            <h4>CNN-Based Automatic Mobile Reporting System and Quantification for the Concrete Crack Size of the Precast Members of OSC Construction</h4>
-                            <p class="pub-authors"><strong>A. Akbar</strong>, J.M. Njoroge, S. Lee, Y. Chang, S. Kwon</p>
+                            <h4>CNN-Based Automatic Mobile Reporting System and Quantification for the Concrete Crack
+                                Size of the Precast Members of OSC Construction</h4>
+                            <p class="pub-authors"><strong>A. Akbar</strong>, J.M. Njoroge, S. Lee, Y. Chang, S. Kwon
+                            </p>
                             <p class="pub-venue">Engineering Proceedings (MDPI)</p>
                         </div>
                     </div>
                     <div class="pub-item">
                         <span class="pub-year">2021</span>
                         <div class="pub-content">
-                            <h4>Remote monitoring system and controller for the construction machinery using AR smart glasses</h4>
+                            <h4>Remote monitoring system and controller for the construction machinery using AR smart
+                                glasses</h4>
                             <p class="pub-authors"><strong>A. Akbar</strong>, J. Song, S.W. Kwon</p>
-                            <p class="pub-venue">ISARC - International Symposium on Automation and Robotics in Construction</p>
+                            <p class="pub-venue">ISARC - International Symposium on Automation and Robotics in
+                                Construction</p>
                         </div>
                     </div>
                 </div>
@@ -199,7 +213,8 @@
                     <div class="pub-item">
                         <span class="pub-year">2025</span>
                         <div class="pub-content">
-                            <h4>Semantic Safety Guidance for Autonomous Construction Site Inspection with Vision-Language Models</h4>
+                            <h4>Semantic Safety Guidance for Autonomous Construction Site Inspection with
+                                Vision-Language Models</h4>
                             <p class="pub-authors"><strong>A. Akbar</strong>, J. Hong, J.M. Njoroge, S. Kwon</p>
                             <p class="pub-venue">SSRN Preprint</p>
                         </div>
@@ -220,7 +235,8 @@
                         <span class="project-date">2023 - 2027</span>
                     </div>
                     <h3>XR-based Construction Management & Metaverse Collaboration</h3>
-                    <p>Developing XR technologies for precision construction and metaverse-based collaborative environments.</p>
+                    <p>Developing XR technologies for precision construction and metaverse-based collaborative
+                        environments.</p>
                     <div class="project-tags">
                         <span>XR</span><span>Metaverse</span><span>Unity</span>
                     </div>
@@ -231,7 +247,8 @@
                         <span class="project-date">2020 - 2025</span>
                     </div>
                     <h3>On-site Information Visualization via AR/VR/MR</h3>
-                    <p>Building AR/VR/MR-based real-time sharing systems for construction site information visualization.</p>
+                    <p>Building AR/VR/MR-based real-time sharing systems for construction site information
+                        visualization.</p>
                     <div class="project-tags">
                         <span>AR</span><span>VR</span><span>Visualization</span>
                     </div>
@@ -242,7 +259,8 @@
                         <span class="project-date">2022 - 2023</span>
                     </div>
                     <h3>Digital Twin-based FAB BIM Consistency & DL Analysis</h3>
-                    <p>SK Hynix project: Real-time BIM verification and deep learning for semiconductor FAB maintenance.</p>
+                    <p>SK Hynix project: Real-time BIM verification and deep learning for semiconductor FAB maintenance.
+                    </p>
                     <div class="project-tags">
                         <span>Digital Twin</span><span>BIM</span><span>Deep Learning</span>
                     </div>
@@ -303,4 +321,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
