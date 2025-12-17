@@ -320,7 +320,7 @@ if (profileImg) {
     profileImg.addEventListener('mouseleave', () => {
         profileImg.style.opacity = '0';
         setTimeout(() => {
-            profileImg.src = 'assets/profile/profile_formal.jpg';
+            profileImg.src = 'assets/profile/profile_formal_nobg.png';
             profileImg.style.opacity = '1';
         }, 300);
     });
